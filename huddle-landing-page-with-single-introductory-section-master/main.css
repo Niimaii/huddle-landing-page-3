@@ -1,0 +1,187 @@
+/* ///// General ///// */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  background-image: url("./images/bg-desktop.svg");
+  background-color: hsl(257, 40%, 49%);
+  font-family: OpenSans, sans-serif;
+}
+
+main {
+  padding: 3rem;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 15% 85%;
+  grid-template-areas:
+    "nav nav"
+    "img content";
+}
+
+/* ///// Nav ///// */
+
+nav {
+  grid-area: nav;
+  margin-bottom: 30rem;
+}
+
+/* ///// Main ///// */
+
+.img {
+  grid-area: img;
+}
+
+.content {
+  grid-area: content;
+  margin-top: 2.5rem;
+  position: relative;
+}
+
+.content h1 {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  line-height: 3rem;
+}
+
+.content p {
+  color: white;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  line-height: 1.4rem;
+  padding-bottom: 1.4rem;
+}
+
+.content button {
+  border: none;
+  background-color: white;
+  padding: 14px 55px;
+  border-radius: 30px;
+  color: hsl(257, 40%, 49%);
+  box-shadow: 0 0 20px 0 hsl(257, 37%, 29%);
+}
+
+.content button:hover {
+  background-color: hsl(273, 72%, 73%);
+  color: white;
+  cursor: pointer;
+}
+
+/* Icons */
+
+.icons svg {
+  fill: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 7.5px;
+}
+
+.icons svg:hover {
+  cursor: pointer;
+  fill: hsl(273, 72%, 73%);
+  border: 1px solid hsl(273, 72%, 73%);
+}
+
+.icons {
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+}
+
+.icons a {
+  margin-right: 0.7rem;
+}
+
+/* ///// Screen Sizing ///// */
+
+@media only screen and (max-width: 1310px) {
+  .img img {
+    height: 75%;
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  .img img {
+    height: 60%;
+  }
+
+  .content h1 {
+    font-size: 1.7rem;
+    font-weight: 500;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 955px) {
+  main {
+    grid-template-columns: 100%;
+    grid-template-rows: 20vh 40vh 80vh;
+    grid-template-areas:
+      "nav"
+      "img"
+      "content";
+  }
+
+  .img img {
+    height: 130%;
+  }
+
+  .img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .content h1 {
+    margin-top: 5rem;
+    font-size: 2rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+  }
+
+  .content button {
+    padding: 14px 80px;
+  }
+
+  .icons {
+    position: unset;
+    margin-top: 7rem;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .img img {
+    height: 100%;
+  }
+
+  .content h1 {
+    margin-top: 2rem;
+  }
+
+  main {
+    padding: 1.7rem;
+  }
+}
